@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071629">
+  <meta name="description" content="Guru Counsel — commercial law, consulting and contracts. Launching soon.">
+  <title>Guru Counsel | Launching Soon</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; --navy: #071629; --navy-soft: #0c2038; --navy-light: #122c49; --gold: #d7b56d; --gold-bright: #f0d99c; --cream: #f5f1e8; --muted: #b8c2cf; --line: rgba(215, 181, 109, .25); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 5%, rgba(30, 65, 100, .4), transparent 48%), var(--navy); color: var(--cream); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; display: flex; flex-direction: column; overflow-x: hidden; }
+    a { color: inherit; }
+    .page-shell { width: min(1120px, 100%); margin: 0 auto; padding: 26px 28px 0; flex: 1; display: flex; flex-direction: column; }
+    .topline { height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .85; }
+    header { display: flex; align-items: center; justify-content: center; padding: 30px 0 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 15px; text-decoration: none; }
+    .brand-mark { width: 70px; height: 70px; flex: 0 0 auto; filter: drop-shadow(0 0 18px rgba(215,181,109,.12)); }
+    .brand-name { margin: 0; color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3vw, 2rem); font-weight: 600; letter-spacing: .035em; line-height: 1.08; }
+    .brand-tagline { margin: 7px 0 0; color: var(--gold); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; }
+    main { width: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 0 60px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); opacity: .75; }
+    h1 { margin: 20px 0 15px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.1rem, 9vw, 6.8rem); line-height: .98; letter-spacing: -.045em; font-weight: 500; }
+    h1 span { color: var(--gold-bright); font-style: italic; }
+    .intro { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2.2vw, 1.18rem); line-height: 1.8; }
+    .typing-wrap { min-height: 48px; margin: 30px 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; color: var(--cream); font-size: clamp(1rem, 2.8vw, 1.35rem); }
+    .typing-prefix { color: var(--muted); }
+    #typed-service { color: var(--gold-bright); font-weight: 600; }
+    .cursor { display: inline-block; width: 2px; height: 1.2em; background: var(--gold); margin-left: -4px; animation: blink .8s steps(2, start) infinite; }
+    @keyframes blink { to { visibility: hidden; } }
+    .rule { width: min(360px, 75%); height: 1px; margin: 34px auto 28px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    .service-note { margin: 0 0 23px; color: var(--muted); font-size: .88rem; letter-spacing: .04em; }
+    .contact-button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 54px; padding: 0 27px; border: 1px solid var(--gold); border-radius: 3px; background: var(--gold); color: #101c2b; text-decoration: none; font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; box-shadow: 0 8px 30px rgba(0,0,0,.15); }
+    .contact-button:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 12px 34px rgba(215,181,109,.16); }
+    .contact-button:focus-visible, a:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 4px; }
+    .email-caption { margin: 14px 0 0; color: #8f9eaf; font-size: .83rem; }
+    .ticker { position: relative; overflow: hidden; width: 100%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .ticker-track { display: flex; width: max-content; align-items: center; animation: ticker-scroll 52s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    .ticker-group { display: flex; align-items: center; flex-shrink: 0; gap: 28px; padding: 17px 14px; white-space: nowrap; }
+    .ticker-item { display: inline-flex; align-items: center; gap: 12px; color: #d7dce3; font-size: .72rem; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; }
+    .ticker-item::before { content: "✦"; color: var(--gold); font-size: .7rem; }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    footer { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 25px 0 27px; color: #8f9eaf; font-size: .76rem; text-align: center; }
+    footer .maker { color: var(--gold); }
+    @media (min-height: 850px) { main { padding-top: 70px; padding-bottom: 80px; } }
+    @media (max-width: 560px) {
+      .page-shell { padding: 18px 19px 0; } header { padding: 25px 0 15px; } .brand { gap: 11px; } .brand-mark { width: 57px; height: 57px; }
+      .brand-tagline { max-width: 230px; font-size: .57rem; letter-spacing: .105em; line-height: 1.6; }
+      main { padding: 56px 0 58px; } h1 { margin-top: 23px; } .intro { line-height: 1.7; }
+      .typing-wrap { max-width: 100%; min-height: 65px; margin-top: 24px; } .contact-button { width: 100%; max-width: 320px; }
+      .ticker-group { gap: 20px; padding: 15px 10px; } .ticker-item { font-size: .65rem; } footer { flex-wrap: wrap; line-height: 1.6; padding: 22px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .ticker { overflow-x: auto; } .ticker-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header>
+      <a class="brand" href="#" aria-label="Guru Counsel home">
+        <svg class="brand-mark" viewBox="0 0 100 100" role="img" aria-label="GC monogram with gold pen nib">
+          <defs><linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0d99c"/><stop offset="50%" stop-color="#d7b56d"/><stop offset="100%" stop-color="#a9823f"/></linearGradient></defs>
+          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldGradient)" stroke-width="1.4"/>
+          <circle cx="50" cy="50" r="39" fill="none" stroke="#d7b56d" stroke-opacity=".25" stroke-width=".8"/>
+          <text x="12" y="62" fill="#f5f1e8" font-family="Georgia, serif" font-size="37" letter-spacing="-5">GC</text>
+          <path d="M72 20 L83 31 L62 63 L55 67 L58 58 Z" fill="url(#goldGradient)" stroke="#f0d99c" stroke-width=".8"/>
+          <path d="M58 58 L62 63 L55 67 Z" fill="#071629"/>
+          <path d="M72 20 L83 31" stroke="#fff0c4" stroke-width="1.3"/>
+          <path d="M52 73 L69 73" stroke="#d7b56d" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <span><p class="brand-name">Guru Counsel</p><p class="brand-tagline">Commercial law, consulting and contracts</p></span>
+      </a>
+    </header>
+    <main>
+      <div class="eyebrow">A new standard in counsel</div>
+      <h1>Launching <span>soon.</span></h1>
+      <p class="intro">Clear thinking. Considered advice. Commercial support built around the agreements and decisions that move your business forward.</p>
+      <div class="typing-wrap" aria-live="polite" aria-atomic="true">
+        <span class="typing-prefix">We help you with</span>
+        <span id="typed-service">contract drafting</span><span class="cursor" aria-hidden="true"></span>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="service-note">Thoughtful legal and commercial support, shaped around your needs.</p>
+      <a class="contact-button" href="mailto:sb.munyadziwa@gmail.com?subject=Enquiry%20for%20Guru%20Counsel">
+        <span>Get in touch</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4z" stroke="currentColor" stroke-width="1.7"/><path d="m5 7.5 7 5.5 7-5.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="email-caption">For enquiries, collaborations and consultations</p>
+    </main>
+  </div>
+  <section class="ticker" aria-label="Guru Counsel services">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span class="ticker-item">Onsite and video consultations</span><span class="ticker-item">Contract drafting and review</span><span class="ticker-item">Negotiation and deal rooms</span><span class="ticker-item">Cross-border negotiation</span><span class="ticker-item">Advisory opinions</span><span class="ticker-item">Long-term in-house support</span><span class="ticker-item">Student and candidate attorney portal</span>
+      </div>
+      <div class="ticker-group" aria-hidden="true">
+        <span class="ticker-item">Onsite and video consultations</span><span class="ticker-item">Contract drafting and review</span><span class="ticker-item">Negotiation and deal rooms</span><span class="ticker-item">Cross-border negotiation</span><span class="ticker-item">Advisory opinions</span><span class="ticker-item">Long-term in-house support</span><span class="ticker-item">Student and candidate attorney portal</span>
+      </div>
+    </div>
+  </section>
+  <footer><span>© 2026 Guru Counsel.</span><span>Built by <span class="maker">CyberForgeTech</span>.</span></footer>
+  <script>
+    (() => {
+      const services = ["contract drafting","contract review","commercial negotiation","cross-border deals","advisory opinions","long-term in-house legal support","training for candidate attorneys"];
+      const output = document.getElementById("typed-service");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { output.textContent = services[0]; return; }
+      let serviceIndex = 0, characterIndex = services[0].length, deleting = true;
+      output.textContent = services[0];
+      function typeLoop() {
+        const current = services[serviceIndex];
+        let delay = deleting ? 48 : 82;
+        if (deleting) {
+          characterIndex--; output.textContent = current.slice(0, Math.max(0, characterIndex));
+          if (characterIndex <= 0) { deleting = false; serviceIndex = (serviceIndex + 1) % services.length; delay = 350; }
+        } else {
+          const next = services[serviceIndex]; characterIndex++; output.textContent = next.slice(0, characterIndex);
+          if (characterIndex >= next.length) { deleting = true; delay = 1700; }
+        }
+        window.setTimeout(typeLoop, delay);
+      }
+      window.setTimeout(typeLoop, 1800);
+    })();
+  </script>
+</body>
+</html>
