@@ -60,13 +60,13 @@ footer{background:var(--navy);color:#cbd5e1;text-align:center;font-size:.85rem;p
 </main>
 <div class="ticker" aria-label="Services">
   <div class="track" id="track">
-    <span>Consultations (onsite and video)</span><span>Contract drafting and review</span><span>Commercial negotiation and deal rooms</span><span>Cross-border negotiation</span><span>Advisory opinions</span><span>Long-term in-house support</span><span>Student and candidate attorney portal</span>
+    <span>Consultations (onsite and video)</span><span>Contract drafting and review</span><span>Commercial negotiation and deal rooms</span><span>Cross-border negotiation</span><span>Advisory opinions</span><span>Long-term in-house support</span><span></span>
   </div>
 </div>
 <footer>© 2026 Guru Counsel. Built by CyberForgeTech.</footer>
 <script>
 (function(){
-  var words=["contract drafting","contract review","commercial negotiation","cross-border deals","advisory opinions","in-house legal support","training for candidate attorneys"];
+  var words=["contract drafting","contract review","commercial negotiation","cross-border deals","advisory opinions","in-house legal support"];
   var el=document.getElementById("tw"),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   var t=document.getElementById("track");
   if(!reduce){var c=t.innerHTML;t.innerHTML=c+c;Array.prototype.slice.call(t.children,7).forEach(function(s){s.setAttribute("aria-hidden","true")});}
