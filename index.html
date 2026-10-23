@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#071629">
   <meta name="description" content="Guru Counsel — commercial law, consulting and contracts. Launching soon.">
   <title>Guru Counsel | Launching Soon</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:image" content="https://www.gurucounsel.com/logo-full.png">
   <style>
     :root { color-scheme: dark; --navy: #071629; --navy-soft: #0c2038; --navy-light: #122c49; --gold: #d7b56d; --gold-bright: #f0d99c; --cream: #f5f1e8; --muted: #b8c2cf; --line: rgba(215, 181, 109, .25); }
     * { box-sizing: border-box; }
@@ -17,7 +18,7 @@
     .topline { height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .85; }
     header { display: flex; align-items: center; justify-content: center; padding: 30px 0 20px; }
     .brand { display: inline-flex; align-items: center; gap: 15px; text-decoration: none; }
-    .brand-mark { width: 70px; height: 70px; flex: 0 0 auto; filter: drop-shadow(0 0 18px rgba(215,181,109,.12)); }
+    .brand-mark { width: 96px; height: 96px; object-fit: contain; flex: 0 0 auto; border-radius: 14px; background:#fff; padding:8px; border:1.5px solid var(--gold); filter: drop-shadow(0 0 18px rgba(215,181,109,.12)); }
     .brand-name { margin: 0; color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3vw, 2rem); font-weight: 600; letter-spacing: .035em; line-height: 1.08; }
     .brand-tagline { margin: 7px 0 0; color: var(--gold); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; }
     main { width: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 0 60px; }
@@ -65,16 +66,7 @@
   <div class="page-shell">
     <header>
       <a class="brand" href="#" aria-label="Guru Counsel home">
-        <svg class="brand-mark" viewBox="0 0 100 100" role="img" aria-label="GC monogram with gold pen nib">
-          <defs><linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0d99c"/><stop offset="50%" stop-color="#d7b56d"/><stop offset="100%" stop-color="#a9823f"/></linearGradient></defs>
-          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldGradient)" stroke-width="1.4"/>
-          <circle cx="50" cy="50" r="39" fill="none" stroke="#d7b56d" stroke-opacity=".25" stroke-width=".8"/>
-          <text x="12" y="62" fill="#f5f1e8" font-family="Georgia, serif" font-size="37" letter-spacing="-5">GC</text>
-          <path d="M72 20 L83 31 L62 63 L55 67 L58 58 Z" fill="url(#goldGradient)" stroke="#f0d99c" stroke-width=".8"/>
-          <path d="M58 58 L62 63 L55 67 Z" fill="#071629"/>
-          <path d="M72 20 L83 31" stroke="#fff0c4" stroke-width="1.3"/>
-          <path d="M52 73 L69 73" stroke="#d7b56d" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
+        <img class="brand-mark" src="logo-mark.png" alt="Guru Counsel GC monogram">
         <span><p class="brand-name">Guru Counsel</p><p class="brand-tagline">Commercial law, consulting and contracts</p></span>
       </a>
     </header>
