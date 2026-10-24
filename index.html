@@ -87,6 +87,8 @@
     html:not([data-theme="light"]) .hero-video-dark ~ .logo-for-dark{display:none}
     @media (prefers-reduced-motion: reduce){html:not([data-theme="light"]) .hero-video-dark{display:none}html:not([data-theme="light"]) .hero-video-dark ~ .logo-for-dark{display:block}}
     html[data-theme="light"] .ticker{background:rgba(11,37,69,.04)}
+    .logo-reel{display:flex;flex-direction:column;align-items:center;padding:40px 16px 8px}
+    .logo-reel .hero-video,.logo-reel .hero-video-dark,.logo-reel .hero-logo{width:min(900px,92vw);margin:0 auto 10px;border-radius:18px}
   </style>
 </head>
 <body>
@@ -99,10 +101,6 @@
     </header>
     <main>
       <h1 class="sr-only">Guru Counsel</h1>
-      <video class="hero-video" src="assets/gc-logo-animation.mp4" poster="assets/gc-logo-animation-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation"></video>
-      <video class="hero-video-dark" src="assets/gc-logo-animation-dark.mp4" poster="assets/gc-logo-animation-dark-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation (dark)"></video>
-      <img class="hero-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
-      <img class="hero-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623" aria-hidden="true">
       <div class="eyebrow">A new standard in counsel</div>
       <p class="launch">Launching <span>soon.</span></p>
       <p class="intro">Clear thinking. Considered advice. Commercial support built around the agreements and decisions that move your business forward.</p>
@@ -128,6 +126,12 @@
         <span class="ticker-item">Onsite and video consultations</span><span class="ticker-item">Contract drafting and review</span><span class="ticker-item">Negotiation and deal rooms</span><span class="ticker-item">Cross-border negotiation</span><span class="ticker-item">Advisory opinions</span><span class="ticker-item">Long-term in-house support</span>
       </div>
     </div>
+  </section>
+  <section class="logo-reel" aria-label="Guru Counsel logo">
+    <video class="hero-video" src="assets/gc-logo-animation.mp4" poster="assets/gc-logo-animation-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation"></video>
+    <video class="hero-video-dark" src="assets/gc-logo-animation-dark.mp4" poster="assets/gc-logo-animation-dark-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation (dark)"></video>
+    <img class="hero-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
+    <img class="hero-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623" aria-hidden="true">
   </section>
   <footer><span>© 2026 Guru Counsel.</span><span>Built by <span class="maker">CyberForgeTech</span>.</span></footer>
   <script>
