@@ -78,6 +78,10 @@
     html[data-theme="light"] .contact-button:hover{background:#1d3a66}
     html[data-theme="light"] .ticker-item{color:#0b2545}
     html[data-theme="light"] .email-caption, html[data-theme="light"] footer{color:#5a6474}
+    .hero-video{display:none;width:min(560px,88vw);height:auto;aspect-ratio:16/9;object-fit:cover;margin:0 auto 26px;border-radius:18px;box-shadow:0 10px 40px rgba(11,37,69,.12)}
+    html[data-theme="light"] .hero-video{display:block}
+    html[data-theme="light"] .hero-video ~ .logo-for-light{display:none}
+    @media (prefers-reduced-motion: reduce){html[data-theme="light"] .hero-video{display:none}html[data-theme="light"] .hero-video ~ .logo-for-light{display:block}}
     html[data-theme="light"] .ticker{background:rgba(11,37,69,.04)}
   </style>
 </head>
@@ -91,6 +95,7 @@
     </header>
     <main>
       <h1 class="sr-only">Guru Counsel</h1>
+      <video class="hero-video" src="assets/gc-logo-animation.mp4" poster="assets/gc-logo-animation-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation"></video>
       <img class="hero-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
       <img class="hero-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623" aria-hidden="true">
       <div class="eyebrow">A new standard in counsel</div>
