@@ -82,6 +82,10 @@
     html[data-theme="light"] .hero-video{display:block}
     html[data-theme="light"] .hero-video ~ .logo-for-light{display:none}
     @media (prefers-reduced-motion: reduce){html[data-theme="light"] .hero-video{display:none}html[data-theme="light"] .hero-video ~ .logo-for-light{display:block}}
+    .hero-video-dark{display:none;width:min(560px,88vw);height:auto;aspect-ratio:16/9;object-fit:cover;margin:0 auto 26px;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+    html:not([data-theme="light"]) .hero-video-dark{display:block}
+    html:not([data-theme="light"]) .hero-video-dark ~ .logo-for-dark{display:none}
+    @media (prefers-reduced-motion: reduce){html:not([data-theme="light"]) .hero-video-dark{display:none}html:not([data-theme="light"]) .hero-video-dark ~ .logo-for-dark{display:block}}
     html[data-theme="light"] .ticker{background:rgba(11,37,69,.04)}
   </style>
 </head>
@@ -96,6 +100,7 @@
     <main>
       <h1 class="sr-only">Guru Counsel</h1>
       <video class="hero-video" src="assets/gc-logo-animation.mp4" poster="assets/gc-logo-animation-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation"></video>
+      <video class="hero-video-dark" src="assets/gc-logo-animation-dark.mp4" poster="assets/gc-logo-animation-dark-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Guru Counsel logo animation (dark)"></video>
       <img class="hero-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
       <img class="hero-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623" aria-hidden="true">
       <div class="eyebrow">A new standard in counsel</div>
@@ -129,7 +134,7 @@
     (() => {
       const btn=document.getElementById("themeToggle"),root=document.documentElement;
       const paint=()=>{const d=root.getAttribute("data-theme")!=="light";btn.querySelector(".t-icon").textContent=d?"☀":"☾";btn.querySelector(".t-label").textContent=d?"Light":"Dark";};
-      paint();btn.addEventListener("click",()=>{const n=root.getAttribute("data-theme")==="light"?"dark":"light";root.setAttribute("data-theme",n);try{localStorage.setItem("gc-theme",n)}catch(e){}paint();});
+      const vids=()=>{const d=root.getAttribute("data-theme")!=="light";document.querySelectorAll(".hero-video,.hero-video-dark").forEach(v=>{const show=getComputedStyle(v).display!=="none";if(show){v.play&&v.play().catch(()=>{})}else{v.pause()}});};vids();paint();btn.addEventListener("click",()=>{const n=root.getAttribute("data-theme")==="light"?"dark":"light";root.setAttribute("data-theme",n);try{localStorage.setItem("gc-theme",n)}catch(e){}paint();vids();});
     })();
     (() => {
       const services = ["contract drafting","contract review","commercial negotiation","cross-border deals","advisory opinions","long-term in-house legal support"];
