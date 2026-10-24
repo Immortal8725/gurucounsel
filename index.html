@@ -90,20 +90,30 @@
     .logo-reel{display:flex;flex-direction:column;align-items:center;padding:40px 16px 8px}
     .logo-reel .hero-video,.logo-reel .hero-video-dark,.logo-reel .hero-logo{width:min(900px,92vw);margin:0 auto 10px;border-radius:18px}
     @media (prefers-reduced-motion: reduce){.logo-reel{display:none}}
+    .site-header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.18);padding:0 !important;display:block !important}
+    html[data-theme="light"] .site-header{box-shadow:0 6px 24px rgba(11,37,69,.08)}
+    .header-inner{position:relative;width:min(1120px,100%);margin:0 auto;padding:14px 28px;display:flex;justify-content:center;align-items:center}
+    .header-inner .theme-toggle{position:absolute;right:28px;top:16px}
+    .top-logo{width:auto !important;height:min(388px,61vw);margin:0 auto !important;transition:height .35s ease}
+    .site-header.scrolled .top-logo{height:130px}
+    .site-header.scrolled .header-inner{padding:8px 28px}
+    @media (max-width:560px){.site-header.scrolled .top-logo{height:80px}.header-inner{padding:12px 16px}.header-inner .theme-toggle{right:12px;top:10px}}
   </style>
 </head>
 <body>
   <div class="topline" aria-hidden="true"></div>
-  <div class="page-shell">
-    <header>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <img class="hero-logo top-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
+      <img class="hero-logo top-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark mode">
         <span class="t-icon" aria-hidden="true">☾</span><span class="t-label">Dark</span>
       </button>
-    </header>
+    </div>
+  </header>
+  <div class="page-shell">
     <main>
       <h1 class="sr-only">Guru Counsel</h1>
-      <img class="hero-logo logo-for-light" src="logo-light.png" alt="Guru Counsel logo: GC monogram with gold pen nib, Commercial law, consulting and contracts" width="900" height="623">
-      <img class="hero-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel logo" width="900" height="623">
       <div class="eyebrow">A new standard in counsel</div>
       <p class="launch">Launching <span>soon.</span></p>
       <p class="intro">Clear thinking. Considered advice. Commercial support built around the agreements and decisions that move your business forward.</p>
@@ -164,5 +174,6 @@
       window.setTimeout(typeLoop, 1800);
     })();
   </script>
+<script>(()=>{const h=document.getElementById("siteHeader");let on=false;const f=()=>{const y=scrollY;if(!on&&y>120){on=true;h.classList.add("scrolled")}else if(on&&y<20){on=false;h.classList.remove("scrolled")}};addEventListener("scroll",f,{passive:true});f();})();</script>
 </body>
 </html>
