@@ -89,12 +89,17 @@
     html[data-theme="light"] .ticker{background:rgba(11,37,69,.04)}
     .logo-reel{display:flex;flex-direction:column;align-items:center;padding:40px 16px 8px}
     .logo-reel .hero-video,.logo-reel .hero-video-dark,.logo-reel .hero-logo{width:min(900px,92vw);margin:0 auto 10px;border-radius:18px}
+    header{justify-content:space-between !important;align-items:center !important;padding:8px 0 0 !important}
+    .head-brand{display:inline-flex;align-items:center}
+    .head-logo{height:64px;width:auto}
+    @media (max-width:560px){.head-logo{height:46px}}
   </style>
 </head>
 <body>
   <div class="topline" aria-hidden="true"></div>
   <div class="page-shell">
     <header>
+      <a class="head-brand" href="/" aria-label="Guru Counsel home"><img class="head-logo logo-for-light" src="logo-light.png" alt="Guru Counsel" height="64"><img class="head-logo logo-for-dark" src="logo-dark.png" alt="Guru Counsel" height="64"></a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark mode">
         <span class="t-icon" aria-hidden="true">☾</span><span class="t-label">Dark</span>
       </button>
